@@ -10,7 +10,7 @@ namespace JsonpViewer
     public class JsonQueryParamsRequestViewer : Inspector2, IRequestInspector2, IBaseInspector2
     {
         private RawView myControl;
-
+        private JsonpView jsonView;
         private HTTPRequestHeaders oHeaders;
 
         private byte[] oBody;
@@ -133,8 +133,12 @@ namespace JsonpViewer
         {
             this.myControl = new RawView(this);
             o.Text = "Json Query Params";
-            o.Controls.Add(this.myControl);
+            //o.Controls.Add(this.myControl);
+            
+            this.jsonView = new JsonpView();
+            o.Controls.Add(this.jsonView);
             o.Controls[0].Dock = DockStyle.Fill;
+
             this.myControl.miContextAutoTruncate.CheckedChanged +=
                 new EventHandler(this.miContextAutoTruncate_CheckedChanged);
         }
@@ -201,9 +205,13 @@ namespace JsonpViewer
                 // takes the first line, minus 'GET ' at the front and ' HTTP/1.1' at the end
                 emptyDecoded = HttpUtility.UrlDecode(empty.Substring(4, empty.IndexOf((char)13) - 4 - 9));
                 this.myControl.txtRaw.Text = emptyDecoded.Replace('\0', '\uFFFD');
+
+                var indexOfRequest = emptyDecoded.IndexOf("?request=", StringComparison.InvariantCultureIgnoreCase) + "?request=".Length;
+                var jsonRequest = emptyDecoded.Substring(indexOfRequest);
+                this.jsonView.SetJSON(jsonRequest);
             }
 
-    this.myControl.txtRaw.Modified = false;
+            this.myControl.txtRaw.Modified = false;
             this.myControl.btnSpawnTextEditor.Enabled = true;
         }
 
