@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>JsonpViewer</RootNamespace>
     <AssemblyName>JsonpViewer</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,8 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Fiddler">
-      <HintPath>C:\Program Files (x86)\Fiddler2\Fiddler.exe</HintPath>
+    <Reference Include="Fiddler, Version=4.4.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\Fiddlerv2\Fiddler.exe</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -39,24 +41,23 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InspectorUi.cs">
+    <Compile Include="CommonMethods.cs" />
+    <Compile Include="JsonpRequestViewer.cs" />
+    <Compile Include="JsonpResponseViewer.cs" />
+    <Compile Include="JsonpView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="InspectorUi.Designer.cs">
-      <DependentUpon>InspectorUi.cs</DependentUpon>
+    <Compile Include="JsonpView.Designer.cs">
+      <DependentUpon>JsonpView.cs</DependentUpon>
     </Compile>
-    <Compile Include="JsonpViewerInspector.cs" />
+    <Compile Include="NoToolTipTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="InspectorUi.resx">
-      <DependentUpon>InspectorUi.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
