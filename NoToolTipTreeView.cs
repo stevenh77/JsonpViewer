@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace JsonpViewer
 {
-    internal class NoToolTipTreeView : TreeView
+    public class NoToolTipTreeView : TreeView
     {
         private const int TVM_SETEXTENDEDSTYLE = 4396;
 

@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>JsonpViewer</RootNamespace>
     <AssemblyName>JsonpViewer</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -38,6 +38,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonMethods.cs" />
-    <Compile Include="JsonpRequestViewer.cs" />
+    <Compile Include="InspectorUtils.cs" />
+    <Compile Include="ISpawnTextEditor.cs" />
+    <Compile Include="JsonQueryParamsRequestViewer.cs" />
     <Compile Include="JsonpResponseViewer.cs" />
     <Compile Include="JsonpView.cs">
       <SubType>UserControl</SubType>
@@ -58,6 +61,17 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RawView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RawView.Designer.cs">
+      <DependentUpon>RawView.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="JsonpView.resx">
+      <DependentUpon>JsonpView.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

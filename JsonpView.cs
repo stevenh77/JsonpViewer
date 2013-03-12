@@ -186,87 +186,119 @@ namespace JsonpViewer
 
         private void InitializeComponent()
         {
-            this.components = new Container();
-            this.mnuJSONTree = new ContextMenuStrip(this.components);
-            this.tsmiCopyNode = new ToolStripMenuItem();
-            this.tsmiSendNodeToTextWizard = new ToolStripMenuItem();
-            this.pnlFooter = new Panel();
-            this.lblStatus = new Label();
-            this.txtSearch = new TextBox();
-            this.btnCollapseAll = new Button();
-            this.btnExpandAll = new Button();
+            this.components = new System.ComponentModel.Container();
+            this.mnuJSONTree = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiCopyNode = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSendNodeToTextWizard = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlFooter = new System.Windows.Forms.Panel();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnCollapseAll = new System.Windows.Forms.Button();
+            this.btnExpandAll = new System.Windows.Forms.Button();
             this.tvJSON = new NoToolTipTreeView();
             this.mnuJSONTree.SuspendLayout();
             this.pnlFooter.SuspendLayout();
-            base.SuspendLayout();
-            ToolStripItem[] toolStripItemArray = new ToolStripItem[2];
-            toolStripItemArray[0] = this.tsmiCopyNode;
-            toolStripItemArray[1] = this.tsmiSendNodeToTextWizard;
-            this.mnuJSONTree.Items.AddRange(toolStripItemArray);
+            this.SuspendLayout();
+            // 
+            // mnuJSONTree
+            // 
+            this.mnuJSONTree.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiCopyNode,
+            this.tsmiSendNodeToTextWizard});
             this.mnuJSONTree.Name = "contextMenuStrip1";
-            this.mnuJSONTree.Size = new Size(185, 48);
-            this.mnuJSONTree.Opening += new CancelEventHandler(this.mnuJSONTree_Opening);
+            this.mnuJSONTree.Size = new System.Drawing.Size(185, 48);
+            this.mnuJSONTree.Opening += new System.ComponentModel.CancelEventHandler(this.mnuJSONTree_Opening);
+            // 
+            // tsmiCopyNode
+            // 
             this.tsmiCopyNode.Name = "tsmiCopyNode";
-            this.tsmiCopyNode.Size = new Size(184, 22);
+            this.tsmiCopyNode.Size = new System.Drawing.Size(184, 22);
             this.tsmiCopyNode.Text = "&Copy";
-            this.tsmiCopyNode.Click += new EventHandler(this.tsmiCopyNode_Click);
+            this.tsmiCopyNode.Click += new System.EventHandler(this.tsmiCopyNode_Click);
+            // 
+            // tsmiSendNodeToTextWizard
+            // 
             this.tsmiSendNodeToTextWizard.Name = "tsmiSendNodeToTextWizard";
-            this.tsmiSendNodeToTextWizard.Size = new Size(184, 22);
+            this.tsmiSendNodeToTextWizard.Size = new System.Drawing.Size(184, 22);
             this.tsmiSendNodeToTextWizard.Text = "S&end to TextWizard...";
-            this.tsmiSendNodeToTextWizard.Click += new EventHandler(this.tsmiSendNodeToTextWizard_Click);
+            this.tsmiSendNodeToTextWizard.Click += new System.EventHandler(this.tsmiSendNodeToTextWizard_Click);
+            // 
+            // pnlFooter
+            // 
             this.pnlFooter.Controls.Add(this.lblStatus);
             this.pnlFooter.Controls.Add(this.txtSearch);
             this.pnlFooter.Controls.Add(this.btnCollapseAll);
             this.pnlFooter.Controls.Add(this.btnExpandAll);
-            this.pnlFooter.Dock = DockStyle.Bottom;
-            this.pnlFooter.Location = new Point(0, 272);
+            this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlFooter.Location = new System.Drawing.Point(0, 272);
             this.pnlFooter.Name = "pnlFooter";
-            this.pnlFooter.Size = new Size(489, 25);
+            this.pnlFooter.Size = new System.Drawing.Size(489, 25);
             this.pnlFooter.TabIndex = 1;
-            this.lblStatus.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            this.lblStatus.Location = new Point(162, 3);
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblStatus.Location = new System.Drawing.Point(162, 3);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new Size(314, 20);
+            this.lblStatus.Size = new System.Drawing.Size(314, 20);
             this.lblStatus.TabIndex = 3;
-            this.lblStatus.TextAlign = ContentAlignment.MiddleLeft;
-            this.txtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            this.txtSearch.Location = new Point(421, 2);
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.Location = new System.Drawing.Point(421, 2);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new Size(65, 21);
+            this.txtSearch.Size = new System.Drawing.Size(65, 21);
             this.txtSearch.TabIndex = 2;
             this.txtSearch.Visible = false;
-            this.btnCollapseAll.Location = new Point(81, 2);
+            // 
+            // btnCollapseAll
+            // 
+            this.btnCollapseAll.Location = new System.Drawing.Point(81, 2);
             this.btnCollapseAll.Name = "btnCollapseAll";
-            this.btnCollapseAll.Size = new Size(75, 23);
+            this.btnCollapseAll.Size = new System.Drawing.Size(75, 23);
             this.btnCollapseAll.TabIndex = 1;
             this.btnCollapseAll.Text = "Collapse";
             this.btnCollapseAll.UseVisualStyleBackColor = true;
-            this.btnCollapseAll.Click += new EventHandler(this.btnCollapseAll_Click);
-            this.btnExpandAll.Location = new Point(0, 2);
+            this.btnCollapseAll.Click += new System.EventHandler(this.btnCollapseAll_Click);
+            // 
+            // btnExpandAll
+            // 
+            this.btnExpandAll.Location = new System.Drawing.Point(0, 2);
             this.btnExpandAll.Name = "btnExpandAll";
-            this.btnExpandAll.Size = new Size(75, 23);
+            this.btnExpandAll.Size = new System.Drawing.Size(75, 23);
             this.btnExpandAll.TabIndex = 0;
             this.btnExpandAll.Text = "Expand All";
             this.btnExpandAll.UseVisualStyleBackColor = true;
-            this.btnExpandAll.Click += new EventHandler(this.btnExpandAll_Click);
-            this.tvJSON.BackColor = Color.AliceBlue;
+            this.btnExpandAll.Click += new System.EventHandler(this.btnExpandAll_Click);
+            // 
+            // tvJSON
+            // 
+            this.tvJSON.BackColor = System.Drawing.Color.AliceBlue;
             this.tvJSON.ContextMenuStrip = this.mnuJSONTree;
-            this.tvJSON.Dock = DockStyle.Fill;
-            this.tvJSON.Font = new Font("Tahoma", 8.25f);
-            this.tvJSON.Location = new Point(0, 0);
+            this.tvJSON.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvJSON.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.tvJSON.Location = new System.Drawing.Point(0, 0);
             this.tvJSON.Name = "tvJSON";
-            this.tvJSON.Size = new Size(489, 272);
+            this.tvJSON.Size = new System.Drawing.Size(489, 272);
             this.tvJSON.TabIndex = 0;
-            this.tvJSON.KeyDown += new KeyEventHandler(this.tvXML_KeyDown);
-            base.Controls.Add(this.tvJSON);
-            base.Controls.Add(this.pnlFooter);
-            this.Font = new Font("Tahoma", 8.25f);
-            base.Name = "JsonpView";
-            base.Size = new Size(489, 297);
+            this.tvJSON.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tvXML_KeyDown);
+            // 
+            // JsonpView
+            // 
+            this.Controls.Add(this.tvJSON);
+            this.Controls.Add(this.pnlFooter);
+            this.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.Name = "JsonpView";
+            this.Size = new System.Drawing.Size(489, 297);
             this.mnuJSONTree.ResumeLayout(false);
             this.pnlFooter.ResumeLayout(false);
             this.pnlFooter.PerformLayout();
-            base.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         private void mnuJSONTree_Opening(object sender, CancelEventArgs e)

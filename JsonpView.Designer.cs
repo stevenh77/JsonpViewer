@@ -263,7 +263,7 @@
                 base.Controls.Add(this.tvJSON);
                 base.Controls.Add(this.pnlFooter);
                 this.Font = new Font("Tahoma", 8.25f);
-                base.Name = "JSONView";
+                base.Name = "JsonpView";
                 base.Size = new Size(489, 297);
                 this.mnuJSONTree.ResumeLayout(false);
                 this.pnlFooter.ResumeLayout(false);
